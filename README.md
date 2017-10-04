@@ -1,4 +1,4 @@
-# coingraph
+# coingraph :chart_with_upwards_trend:
 Plot any coin from https://coinmarketcap.com using historical data
 
 Install:
