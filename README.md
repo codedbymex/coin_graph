@@ -1,5 +1,5 @@
 # coingraph
-Plot any coin from coinmarketcap.com using historical data
+Plot any coin from https://coinmarketcap.com using historical data
 
 Install:
 pip install -r requirements.txt
