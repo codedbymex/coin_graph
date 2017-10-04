@@ -1,8 +1,13 @@
+#!/usr/bin/env python
 import sys
 import requests
 import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
+
+__version__ = '0.1'
+__author__ =  'Norbert Bota'
+__author_email__= 'botanorbert1@gmail.com'
 
 # Plotting a specific coin from coinmarketcap
 if sys.argv[1] == '-c':
