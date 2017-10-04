@@ -1,5 +1,5 @@
 # coingraph
-Plot a coin from coinmarketcap.com using historical data
+Plot any coin from coinmarketcap.com using historical data
 
 example: python api.py -c bitcoin
 # Result:
