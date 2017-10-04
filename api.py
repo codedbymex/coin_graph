@@ -5,13 +5,11 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 # Plotting a specific coin from coinmarketcap
-
 if sys.argv[1] == '-c':
 	COIN = str(sys.argv[2])
 elif "-c" not in sys.argv[0:2]:
 	exit("Usage: api.py -c <coin> \nexample: api.py -c bitcoin")
 	
-
 BASE_URL = "https://graphs.coinmarketcap.com/currencies/"
 
 def get_historical_data(coin):
@@ -30,7 +28,6 @@ def main():
 	d = get_historical_data(COIN)
 	df = pd.DataFrame({"Time": d.keys(), "Price": d.values()})
 	df.index = df['Time']
-
 	df['Price'].plot(figsize=(20,10), color="green")
  	plt.title(COIN)
 	plt.xlabel('Date')
