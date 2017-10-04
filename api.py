@@ -22,8 +22,8 @@ def get_historical_data(coin):
 	for i in coin_data:
 		real_time = i[0] / 1e3
 		temp = datetime.fromtimestamp(real_time) #.strftime('%Y-%m-%d %H:%M:%S')
-		new_ripple = {temp:i[1]}
-		result.update(new_ripple)
+		new_coin = {temp:i[1]}
+		result.update(new_coin)
 	return result
 
 def main():
