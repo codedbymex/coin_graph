@@ -32,7 +32,7 @@ def main():
 	df.index = df['Time']
 
 	df['Price'].plot(figsize=(20,10), color="green")
- 
+ 	plt.title(COIN)
 	plt.xlabel('Date')
 	plt.ylabel('Price')
 	plt.show()
