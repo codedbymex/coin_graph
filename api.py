@@ -1,5 +1,5 @@
-import requests
 import sys
+import requests
 import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
