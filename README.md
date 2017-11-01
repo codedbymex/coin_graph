@@ -1,6 +1,7 @@
 # coingraph :chart_with_upwards_trend:
 Plot any coin from https://coinmarketcap.com using historical data
-# Works with Python 2.7
+
+Works with Python 2.7
 
 Install:
 pip install -r requirements.txt
