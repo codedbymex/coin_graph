@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys
+import argparse
 import requests
 import pandas as pd
 from datetime import datetime
@@ -9,25 +9,25 @@ __version__ = '0.1'
 __author__ =  'Norbert Bota'
 __author_email__= 'botanorbert1@gmail.com'
 
-# Plotting a specific coin from coinmarketcap
-if sys.argv[1] == '-c':
-    COIN = str(sys.argv[2])
-elif "-c" not in sys.argv[0:2]:
-    exit("Usage: api.py -c <coin> \nexample: api.py -c bitcoin")
+parser = argparse.ArgumentParser(description='Plotting a specific coin \
+                                              from coinmarketcap')
+
+parser.add_argument('-c', '--coin',
+                    action="store",
+                    help='specify coin name',
+                    required=True)
+
+coin_name = parser.parse_args()
+COIN = coin_name.coin
 
 BASE_URL = "https://graphs.coinmarketcap.com/currencies/"
 
 def get_historical_data(coin):
     r = requests.get("".join((BASE_URL, coin, "/")))
     coin_data = r.json()['price_usd']
-    result = {}
-
-    for i in coin_data:
-        real_time = i[0] / 1e3
-        temp = datetime.fromtimestamp(real_time) #.strftime('%Y-%m-%d %H:%M:%S')
-        new_coin = {temp:i[1]}
-        result.update(new_coin)
-    return result
+    real_time = lambda x: datetime.fromtimestamp(x / 1e3)
+    coin = {real_time(key): value for key, value in coin_data}
+    return coin
 
 def main():
     d = get_historical_data(COIN)
