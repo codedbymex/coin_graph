@@ -31,7 +31,7 @@ def get_historical_data(coin):
 
 def main():
     d = get_historical_data(COIN)
-    df = pd.DataFrame({"Time": list(d.keys()), "Price":list(d.values())})
+    df = pd.DataFrame({"Time":list(d.keys()), "Price":list(d.values())})
     df.index = df['Time']
     df['Price'].plot(figsize=(20,10), color="green")
     plt.title(COIN)
