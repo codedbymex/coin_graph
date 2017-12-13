@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 __version__ = '0.1'
 __author__ =  'Norbert Bota'
-__author_email__= 'botanorbert1@gmail.com'
+__author_email__ = 'botanorbert1@gmail.com'
 
 parser = argparse.ArgumentParser(description='Plotting a specific coin \
                                               from coinmarketcap')
