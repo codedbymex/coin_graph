@@ -20,7 +20,7 @@ parser.add_argument('-c', '--coin',
 coin_name = parser.parse_args()
 COIN = coin_name.coin
 
-BASE_URL = "https://graphs.coinmarketcap.com/currencies/"
+BASE_URL = "https://graphs2.coinmarketcap.com/currencies/"
 
 def get_historical_data(coin):
     r = requests.get("".join((BASE_URL, coin, "/")))
