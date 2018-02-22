@@ -25,7 +25,7 @@ COIN = coin_name.coin
 
 BASE_URL = "https://graphs2.coinmarketcap.com/currencies/"
 
-def get_historical_data(coin):
+def historical_data(coin):
     r = requests.get("".join((BASE_URL, coin, "/")))
     coin_data = r.json()['price_usd']
     real_time = lambda x: datetime.fromtimestamp(x / 1e3)
@@ -33,7 +33,7 @@ def get_historical_data(coin):
     return coin
 
 def main():
-    d = get_historical_data(COIN)
+    d = historical_data(COIN)
     df = pd.DataFrame({"Time":list(d.keys()), "Price":list(d.values())})
     df.index = df['Time']
     df['Price'].plot(figsize=(20,10), color="green")
