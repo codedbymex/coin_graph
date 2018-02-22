@@ -10,14 +10,14 @@ __author__ =  'Norbert Bota'
 __author_email__ = 'botanorbert1@gmail.com'
 
 parser = argparse.ArgumentParser(
-  description='Plotting a specific coin from coinmarketcap'
+    description='Plotting a specific coin from coinmarketcap'
 )
 
 parser.add_argument(
-                    '-c', '--coin',
-                    action="store",
-                    help='specify coin name',
-                    required=True
+    '-c', '--coin',
+    action="store",
+    help='specify coin name',
+    required=True
 )
 
 coin_name = parser.parse_args()
