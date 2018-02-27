@@ -33,9 +33,13 @@ def historical_data(coin):
     return coin
 
 def main():
-    d = historical_data(COIN)
-    df = pd.DataFrame({"Time":list(d.keys()), "Price":list(d.values())})
-    df.index = df['Time']
+    d = get_historical_data(COIN)
+    df = pd.DataFrame({
+        "Time":list(d.keys()),
+        "Price":list(d.values())},
+        index=d.keys()
+    )
+
     df['Price'].plot(figsize=(20,10), color="green")
     plt.title(COIN)
     plt.xlabel('Date')
