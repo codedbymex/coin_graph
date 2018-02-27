@@ -33,7 +33,7 @@ def historical_data(coin):
     return coin
 
 def main():
-    d = get_historical_data(COIN)
+    d = historical_data(COIN)
     df = pd.DataFrame({
         "Time":list(d.keys()),
         "Price":list(d.values())},
