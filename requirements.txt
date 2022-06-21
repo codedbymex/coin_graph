@@ -5,7 +5,7 @@ DateTime==4.2
 functools32==3.2.3.post2
 idna==2.6
 matplotlib==2.0.2
-numpy==1.13.3
+numpy==1.22.0
 pandas==0.20.3
 pyparsing==2.2.0
 python-dateutil==2.6.1
